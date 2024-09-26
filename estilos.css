@@ -1,0 +1,259 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+a {
+    text-decoration: none;
+    color:black
+}
+.contenedor {
+    width: 100%;
+    min-height: 100vh;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-template-rows:60px auto ;
+    grid-template-areas: "encabezado encabezado"
+                        "menu contenido";
+    transition: all.3s ease;
+}
+.contenedor.active {
+    grid-template-columns: 300px auto;
+}
+
+
+
+
+.encabezado {
+    grid-area: encabezado;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 20px ;
+    grid-template-areas: "logo busqueda iconos";
+
+}
+.encabezado .contenedor-logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+
+}
+.encabezado .contenedor-logo .boton-menu {
+    border:none;
+    padding:10px;
+    background: none;
+    cursor:pointer;
+    font-size: 18px;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+
+}
+.encabezado .contenedor-logo .boton-menu:hover {
+    background: #e7e7e7;
+}
+.encabezado .contenedor-logo .logo .fa-solid{
+    background: #ff000f;
+    padding: 7px 12px;
+    border-radius:7px;
+    font-size: 8px;
+    color: #fff;
+    position: relative;
+    top:-4px;
+    margin-right: 4px;
+}
+.encabezado .contenedor-logo .logo {
+    font-family:sans-serif;
+    font-size: 20px;
+    position: relative;
+    font-weight: bold;
+    top:2px;
+}
+
+.encabezado .barra-busqueda {
+    grid-area: busqueda;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.encabezado .barra-busqueda input {
+    min-width: 60%;
+    padding:0 15px;
+    height:35px;
+    line-height: 35px;
+    border:19x solid #ccc;
+    font-size:16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+}
+.encabezado .barra-busqueda button {
+    height: 35px;
+    border:0px solid #ccc;
+    border-left:none;
+    color:#545454;
+    background: #f8f8f8;
+    padding: 0 25px;
+    cursor:pointer;
+
+
+
+
+}
+.encabezado .barra-busqueda button:heaver {
+    background: #f5f5f5;
+
+}
+.encabezado .botones-encabezado{
+    grid-area: iconos;
+    display:flex;
+    align-items: center;
+
+}
+.encabezado .botones-encabezado button {
+    background: none;
+    border:none;
+    width: 40px;
+    height:40px;
+    font-size: 18px;
+    padding: 7px 12px;
+    border-radius:100px;
+    color:#828282;
+    margin-right: 20px;
+    cursor:pointer;
+}
+.encabezado .botones-encabezado button:hover {
+    background: #e7e7e7;  
+}
+
+.encabezado .botones-encabezado .avatar {
+    width: 30px;
+    height:30px;
+    display:inline-block;
+}
+.encabezado .botones-encabezado .avatar img {
+    vertical-align: top;
+    width:100%;
+    border-radius: 100px;
+}
+.menu-lateral {
+    grid-area: menu;
+    background:#fff;
+    overflow: hidden;
+}
+.menu-lateral a {
+    display: block;
+    padding: 15px 35px ;
+    color:#000;
+    min-width: 700px;
+}
+.menu-lateral a:hover {
+    background: #e5e5e5;
+}
+.menu-lateral a.active {
+    background: #e5e5e5;
+    font-weight: bold;
+}
+.menu-lateral .fa-solid {
+    color: #606060;
+    margin-right: 32px;
+    width: 20px;
+    text-align:center;
+}
+.menu-lateral .fa-brands {
+    color: #606060;
+    margin-right: 32px;
+    width: 20px;
+    text-align:center;
+}
+.menu-lateral .fa-regular {
+    color: #606060;
+    margin-right: 32px;
+    width: 20px;
+    text-align:center;
+}
+.menu-lateral a.active .fa-solid {
+    color: #ff0000;
+}
+.menu-lateral hr{
+    margin: 20px 0;
+    border:1px solid #dfdfdf;
+}
+
+.main {
+    grid-area:contenido;
+    background: #f9f9f9;
+    padding: 40px;
+
+}
+
+.main .titulo {
+    margin-bottom:50px;
+}
+.main .grid-videos {
+    display:grid;
+    grid-gap: 60px 5px;
+    grid-template-columns:repeat(3, 1fr);
+}
+.main .grid-videos .video {
+    width: 100;
+    display: block;
+}
+.video h3 {
+    font-weight: 600; 
+    font-size: 19px; 
+    color: #000000; 
+    margin: 2px 0;
+    align-items: center; 
+}
+
+.main .grid-videos .video img{
+    width:100%;
+}
+
+.main {
+    display: flex;        
+    flex-wrap: wrap;      
+    gap: 10px;            
+}
+
+.titulo {
+    font-family: 'Open Sans', sans-serif; 
+    color: rgb(13, 13, 13); 
+    background: #c5c4c4; 
+    padding: 5px 10px;
+    border-radius: 8px; 
+    letter-spacing: 1px; 
+    font-size: 15px; 
+    text-align: center; 
+    cursor: pointer;
+    display: inline-block;
+    width: auto; 
+}
+
+.titulo:hover {
+    background: rgb(0, 0, 0); 
+    color: white; 
+}
+.video-info {
+    display: flex;
+    align-items: middle;
+}
+.logo-canal {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px; 
+}
+
+
